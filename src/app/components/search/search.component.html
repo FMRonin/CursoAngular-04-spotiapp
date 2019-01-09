@@ -1,3 +1,11 @@
-<p>
-  search works!
-</p>
+<form>
+    <div class="form-group">
+        <label>Search:</label>
+        <input #termino (keyup)="Search(termino.value)" type="text" class="form-control" placeholder="Search">
+        <small class="form-text text-muted">escriba el nombre de la cación que busca.</small>
+    </div>
+</form>
+
+<app-loading *ngIf="loading"></app-loading>
+
+<app-tarjetas [items]='artists' *ngIf="!loading"></app-tarjetas>
